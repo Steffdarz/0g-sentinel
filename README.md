@@ -1,37 +1,41 @@
-# 0G Sentinel — Autonomous Market Intelligence Agent
+# 0G Sentinel — Agent-as-a-Service Market Intelligence
 
 > **0G APAC Hackathon 2026 — Track 3: Agentic Economy**
 
-0G Sentinel is an autonomous AI agent that continuously collects live DeFi market data, generates structured intelligence reports, and stores each report immutably on the **0G decentralised storage network**. Every report is cryptographically anchored on-chain via a Merkle root, making market analysis auditable and tamper-evident by anyone with the root hash.
+0G Sentinel is an autonomous **Agent-as-a-Service (AaaS)** platform that continuously collects live DeFi market data, generates structured intelligence reports, and publishes each report immutably on the **0G decentralised storage network**. Every report is cryptographically anchored on-chain via a Merkle root — creating a **trustless, permissionless intelligence layer** that any agent, dApp, or user can query and verify without trusting a centralised provider.
+
+This is the data backbone of the Agentic Economy: autonomous agents need reliable, verifiable information to act on. 0G Sentinel provides it.
 
 ---
 
 ## Problem
 
-DeFi market intelligence is ephemeral. Price feeds, TVL snapshots, and trend analyses are consumed and discarded — there is no persistent, verifiable record of what the market looked like at any given moment. This makes it impossible to:
+The Agentic Economy runs on data — but current AI agent infrastructure has a fundamental trust gap:
 
-- Audit the data a trading agent acted on
-- Verify that a published analysis matches the raw data
-- Build trust in AI-generated market insights
+- **Agents can't verify the data they act on.** A trading agent or AI oracle has no way to confirm that the market snapshot it received wasn't tampered with between collection and delivery.
+- **Intelligence is not a service.** Today's market data is either free and unverified, or paywalled and centralised. There is no permissionless, pay-per-use intelligence layer for agents.
+- **No audit trail.** When an autonomous agent makes a financial decision, there is no immutable record of *what data it saw*, making accountability impossible.
 
 ---
 
 ## Solution
 
-0G Sentinel introduces **on-chain data provenance for AI agents**:
+0G Sentinel introduces a **verifiable, autonomous intelligence service** built on 0G Storage:
 
 ```
-Live APIs  →  Sentinel Agent  →  Analysis  →  0G Storage  →  On-chain Merkle Root
+Live APIs → Sentinel Agent → Structured Analysis → 0G Storage → On-chain Merkle Root
+                                                        ↓
+                                              Any agent queries by root hash
 ```
 
 Each cycle the agent:
 
 1. **Collects** live market data (prices, DeFi TVL, trending coins) from CoinGecko
-2. **Analyzes** the snapshot — producing a structured JSON report with DeFi health, top movers, and a key insight
-3. **Uploads** the report to 0G decentralised storage via the `@0gfoundation/0g-ts-sdk`
-4. **Records** the on-chain Merkle root hash and transaction hash for public verification
+2. **Analyzes** the snapshot — producing a structured JSON report with DeFi health, risk level, top movers, and a key insight
+3. **Uploads** the report to 0G decentralised storage via the official `@0gfoundation/0g-ts-sdk`
+4. **Anchors** the Merkle root hash on-chain — creating an immutable, publicly verifiable record
 
-Anyone can verify a report by querying the 0G Storage indexer with the Merkle root hash.
+Any agent or user can retrieve and verify any report by root hash — no API key, no account, no trust required.
 
 ---
 
@@ -171,6 +175,21 @@ Without a key the agent uses a local heuristic analyzer — the on-chain storage
 
 ---
 
+## Agentic Economy Fit
+
+0G Sentinel directly targets the three pillars of Track 3:
+
+### Financial Rails
+Each Merkle-rooted report is a **tradeable data asset**. The architecture is designed to plug into micropayment rails: a consuming agent submits a micro-payment to unlock access to a specific report by root hash. No centralised subscription — pay per insight, on-chain, permissionlessly.
+
+### Agent-as-a-Service
+The sentinel runs indefinitely as a background service. Any downstream agent — a trading bot, a DeFi protocol, an AI oracle — can query verified intelligence without running its own data infrastructure. This is AaaS: intelligence provided as an on-chain service.
+
+### Operational Tools
+The agent is fully self-custodial: it holds its own EVM wallet, funds its own storage transactions from that wallet, and operates without human intervention. It is a primitive for AI-governed financial infrastructure.
+
+---
+
 ## Why 0G Storage?
 
 | Property | Centralised Storage | 0G Storage |
@@ -178,9 +197,10 @@ Without a key the agent uses a local heuristic analyzer — the on-chain storage
 | Tamper-evident | No | Yes — Merkle root on-chain |
 | Permissionless read | No | Yes — root hash is enough |
 | Verifiable provenance | No | Yes — tx on block explorer |
+| Micropayment-compatible | No | Yes — root hash = paywall key |
 | Cost | SaaS subscription | Gas only |
 
-0G Storage is purpose-built for high-throughput AI data. By anchoring every intelligence report on 0G, any downstream agent or user can trustlessly verify that the analysis they're acting on hasn't been altered.
+0G Storage is purpose-built for high-throughput AI data. By anchoring every intelligence report on 0G, any downstream agent or user can trustlessly verify that the analysis they're acting on hasn't been altered — and the root hash doubles as the key for a micropayment access layer.
 
 ---
 
