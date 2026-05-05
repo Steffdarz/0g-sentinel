@@ -69,7 +69,7 @@ sentinel/
 ```
 Root Hash : 0xc79eee3b52ef26e8a3573e4fb78e3699d7e300c82b4384c0091d7974535573ff
 Tx Hash   : 0xcd02b6e4c9b2f1625766608ff6a6552ff1fe47f6ed1cab256386eed9a05cede0
-Explorer  : https://storagescan-galileo.0g.ai/tx/0xcd02b6e4c9b2f1625766608ff6a6552ff1fe47f6ed1cab256386eed9a05cede0
+Explorer  : https://chainscan-galileo.0g.ai/tx/0xcd02b6e4c9b2f1625766608ff6a6552ff1fe47f6ed1cab256386eed9a05cede0
 ```
 
 **Sample report output (`sentinel.cli get <hash>`):**
@@ -80,7 +80,7 @@ Explorer  : https://storagescan-galileo.0g.ai/tx/0xcd02b6e4c9b2f1625766608ff6a65
   Time  : 2026-05-05T06:13:31 UTC
   Hash  : 0xc79eee3b52ef26...
   Chain : ON-CHAIN
-  Link  : https://storagescan-galileo.0g.ai/tx/0xcd02b6e4...
+  Link  : https://chainscan-galileo.0g.ai/tx/0xcd02b6e4...
 ────────────────────────────────────────────────────────────
   Summary    : Average 24h change: -0.28%. Trending: wojak, Pudgy Penguins, Toncoin.
   DeFi Health: neutral
@@ -200,7 +200,7 @@ Without a key the agent uses a local heuristic analyzer — the on-chain storage
 - **Track**: Track 3 — Agentic Economy
 - **Network**: 0G Galileo Testnet (Chain ID 16602)
 - **Wallet**: `0x6164641bE1E09C67C9335BB38448A139e93B8722`
-- **Live tx**: [0xcd02b6e4...](https://storagescan-galileo.0g.ai/tx/0xcd02b6e4c9b2f1625766608ff6a6552ff1fe47f6ed1cab256386eed9a05cede0)
+- **Live tx**: [0xcd02b6e4...](https://chainscan-galileo.0g.ai/tx/0xcd02b6e4c9b2f1625766608ff6a6552ff1fe47f6ed1cab256386eed9a05cede0)
 
 ---
 
