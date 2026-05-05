@@ -1,0 +1,31 @@
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+.omni/
+
+# Secrets — never commit
+.env
+.env.local
+*.key
+*.pem
+
+# Generated reports (on-chain, no need to track in git)
+sentinel/reports/
+
+# X.com session cookies (personal)
+x_cookies.json
+
+# Debug / scratch files from dev session
+debug_*.py
+debug_*.html
+check_*.py
+test_*.py
+faucet.py
+gen_wallet.py
+extract_cookies.py
+graphql_raw.json
+network_log.json
+x_results.json
+x_search.py
+debug_page.html
